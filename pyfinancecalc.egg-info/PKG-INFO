@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: pyfinancecalc
+Version: 0.1.0
+Summary: A lightweight, dependency-free finance calculations library
+Home-page: https://github.com/karanlokhande/pyfinancecalc
+Author: Karan Madhukar Lokhande
+Author-email: Karan Madhukar Lokhande <karanlokhande2005@gmail.com>
+License: MIT
+Project-URL: Source, https://github.com/karanlokhande/pyfinancecalc
+Project-URL: Tracker, https://github.com/karanlokhande/pyfinancecalc/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-python
+
+# pyfinancecalc
+
+A lightweight, dependency-free finance calculations library for Python.
+
+## Features
+- Investment: SIP future value, lump sum future value, CAGR, XIRR (no dependencies).
+- Loans: EMI, interest/principal split, amortization schedules.
+- Planning: Required SIP or lump sum to hit a goal.
+- Core: NPV, IRR, rate conversions.
+
+## Quick Start
+
+```bash
+pip install pyfinancecalc
+```
+
+```python
+from pyfinancecalc import sip_future_value, emi, cagr
+
+print(sip_future_value(1000, 0.12, 24))     # SIP FV
+print(emi(500000, 0.09, 240))               # EMI
+print(cagr(100000, 150000, 2))              # CAGR
+```
+
+## XIRR Example
+```python
+from pyfinancecalc import xirr
+cashflows = [-10000, 3000, 3000, 3000, 6000]
+dates = [0, 120, 240, 360, 480]  # days from t0
+print(xirr(cashflows, dates))
+```
+
+## Testing
+```bash
+pip install pytest
+pytest
+```
